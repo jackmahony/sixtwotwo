@@ -1,0 +1,36 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+  -# Individual Projects------------------------------------------------------------------------------------------------------------------
+  %section#projects
+    .row
+      .medium-12.columns
+        {% if post.project_title %}
+          %h2 {{post.project_title}}
+        {% endif %}
+
+    .row
+      .medium-12.columns
+        {% if post.project_information %}
+          %p.info {{post.project_information}}
+        {% endif %}
+
+    .row.flexicontent
+      .medium-12.columns
+          {% for section in post.get_field('project_content') %}
+            {% if section.acf_fc_layout == 'sub_header' %}
+              .project-sub-header
+                %h3 {{section.sub_header}}
+            {% elseif section.acf_fc_layout == 'body_text' %}
+              .project-body-text
+                %p {{section.body_text}}
+            {% elseif section.acf_fc_layout == 'percent_image' %}
+              .project-percent-image
+                %img{src: "{{ TimberImage(section.percent_image)|resize(300, 300) }}"}
+            {% elseif section.acf_fc_layout == 'full_image' %}
+              .medium-8.medium-offset-2.project-full-image
+                %img{src: "{{ TimberImage(section.full_image)}}"}
+            {% endif %}
+          {% endfor %}
+{% endblock %}

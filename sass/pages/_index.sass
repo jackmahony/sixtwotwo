@@ -1,0 +1,375 @@
+body
+  background-color: none
+
+  p
+    color: $black
+    font-size: rem-calc(16)
+    line-height: 1.8rem
+  h1
+    color: $black
+
+  h2
+    color: $black
+
+  h3
+    color: $black
+    line-height: 1.8rem
+    margin-top: rem-calc(25)
+
+
+// Hompage Studio Image ----------------------------------------------------------
+section#home-img
+  position: relative
+  padding-top: rem-calc(25)
+  padding-bottom: rem-calc(25)
+
+  h3,p
+    color: $white
+    text-align: center
+
+    +breakpoint(medium)
+      font-size: 60px !important
+
+  +breakpoint(medium)
+    display: block
+    height: rem-calc(650)
+
+    h3
+      display: block
+      position: relative
+      line-height: 3rem
+      text-align: center
+      font-size: 45px
+      animation-delay: 1s
+
+    p
+      display: block
+      padding-left: 300px
+      padding-right: 300px
+      margin-top: 1rem
+      position: relative
+      text-align: center
+      animation-delay: 1s
+      font-size: rem-calc(16) !important
+
+// services ------------------------------------------------------------------------------
+section#services
+  position: relative
+  padding-top: 0
+  padding-bottom: rem-calc(15)
+  box-shadow: 0px 3px 2px #afafaf
+  z-index: 2
+
+  .hov
+    height: rem-calc(300)
+
+  img
+    display: block
+    margin-left: auto
+    margin-right: auto
+    width: 50%
+    max-height: 240px
+    opacity: 0.7
+
+  h3
+    margin-bottom: 0px
+
+  h2
+    position: relative
+    margin-top: rem-calc(25)
+    margin-bottom: rem-calc(5)
+
+  p
+    margin-bottom: rem-calc(20)
+    margin-top: 0
+
+  +breakpoint(medium)
+    padding-bottom: rem-calc(30)
+
+    h2
+      margin-top: 0
+
+    img
+      width: 50%
+      max-height: 240px
+      opacity: 0
+
+    .expanded
+      padding-left: 0
+      padding-right: 0
+
+    .column
+      padding: 0
+      vertical-align: middle
+
+    .hov
+      position: relative
+      padding-left: 0
+      padding-right: 0
+      height: rem-calc(300)
+
+      +breakpoint (medium)
+        height: rem-calc(400)
+
+      &:hover
+        img
+          opacity: 1
+          transition: 900ms all
+
+    .norm
+      padding: rem-calc(35)
+
+      p
+        transition: 200ms
+        position: relative
+        line-height: 2.5rem
+
+// Bio section-----------------------------------------------------------------------------------
+section#us
+  margin-top: 0
+  padding-top: rem-calc(25)
+  position: relative
+  z-index: 1
+  padding-bottom: rem-calc(30)
+
+  h2
+    margin-bottom: rem-calc(25)
+    margin-top: rem-calc(25)
+
+  img
+    width: 100%
+    height: auto
+    box-shadow: 0 20px 30px 0 rgba(0,0,0,0.1)
+    border-radius: 3px
+
+  +breakpoint(medium)
+    padding-top: rem-calc(80)
+    background-color: #f4f4f4
+    padding-bottom: rem-calc(80)
+
+    h2
+      margin-bottom: rem-calc(30)
+
+    p
+      line-height: 2.5rem
+
+    .tim
+      margin-bottom: rem-calc(80)
+
+// Projects Home Page --------------------------------------------------------------------------------
+section#projectshome
+  padding-top: rem-calc(10)
+  position: relative
+  display: block
+  animation-delay: 0.4s
+
+  +breakpoint(medium)
+    padding-bottom: 0
+    margin-bottom: rem-calc(60)
+
+  h2
+    color: $black
+    text-align: center
+
+    +breakpoint(medium)
+      margin-bottom: rem-calc(30)
+
+  h3
+    color: $white
+
+  p
+    color: $white
+
+  a
+    overflow: hidden
+    display: block
+    text-decoration: none
+    text-align: center
+    color: white
+    margin-bottom: 1rem
+    -webkit-transition: all 0.2s ease-in-out
+    transition: all 0.2s ease-in-out
+    position: relative
+
+    *
+      -webkit-transition: all 0.2s ease
+      transition: all 0.2s ease
+
+    .project-pic
+      overflow: hidden
+      z-index: 0
+      background: none
+      box-shadow: 0 20px 30px 0 rgba(0,0,0,0.1)
+      border-radius: 3px
+
+    img
+      width: 101%
+      max-width: 101%
+      -webkit-transform: translate3d(0, 0, 0) scale(1)
+      transform: translate3d(0, 0, 0) scale(1)
+      box-shadow: 0 20px 30px 0 rgba(0,0,0,0.1)
+      border-radius: 3px
+
+    figcaption
+      position: absolute
+      background-color: rgba(69, 98, 255, 0.3)
+      width: 100%
+      height: 100%
+      top: 0
+      opacity: 1
+
+      +breakpoint(medium)
+        opacity: 0
+
+        &:hover
+          opacity: 1
+
+    .project-info
+      position: absolute
+      width: 100%
+      top: 50%
+      left: 50%
+      padding: 5rem 3rem
+      -webkit-transform: translate(-50%, -50%)
+      transform: translate(-50%, -50%)
+
+    &:hover
+      -webkit-transform: translate3d(0, 0, 0) scale(1.05)
+      transform: translate3d(0, 0, 0) scale(1.05)
+
+// Projects Individual-------------------------------------------------------------------
+section#projects
+  padding-top: rem-calc(25)
+  background-color: none
+  position: relative
+
+  h2
+    text-align: center
+    padding-bottom: rem-calc(25)
+
+  .info
+    text-align: center
+
+  .project-sub-header
+    margin-top: rem-calc(40)
+    margin-bottom: rem-calc(20)
+
+    h3
+      margin: 0
+
+  .project-full-image
+
+    margin-top: rem-calc(40)
+    margin-bottom: rem-calc(20)
+
+    img
+      width: 100%
+      height: auto
+
+// Home Page -------------------------------------------------------------------------------------
+video
+  position: fixed
+  top: 50%
+  left: 50%
+  min-width: 100%
+  min-height: 100%
+  width: auto
+  height: auto
+  z-index: -100
+  transform: translateX(-50%) translateY(-50%)
+  background: url('//assets/vid/sample.jpg') no-repeat
+  background-size: cover
+  transition: 1s opacity
+
+section#home-video
+  position: relative
+  padding: 0
+  margin-top: rem-calc(150px)
+
+  img
+    display: block
+    margin-left: auto
+    margin-right: auto
+    height: rem-calc(150)
+    width: auto
+
+section#home-enter
+  position: relative
+  padding: rem-calc(10)
+  text-align: center
+
+  p
+    font-size: rem-calc(22)
+    color: white
+    border: 2px solid
+    display: inline-block
+    padding-left: rem-calc(20)
+    padding-right: rem-calc(20)
+    padding-top: rem-calc(5)
+    padding-bottom: rem-calc(5)
+    box-shadow: 0 20px 30px 0 rgba(0,0,0,0.1)
+    border-radius: 3px
+
+    &:after
+      content: ''
+      position: absolute
+      bottom: rem-calc(1)
+      opacity: 0
+      color: #white
+      left: 12.5%
+      transition: 200ms all
+
+    &:hover
+      opacity: 1
+      transition: 1s
+      background-color: $white
+      border: $white
+      color: #1C1C1C
+
+      &:after
+        transition: 1.5s
+        bottom: -5
+        opacity: 1
+        color: $white
+
+// Contact page ----------------------------------------------------------------------------------
+section#contact-text
+  padding-bottom: 0
+  padding-top: 0
+  margin-top: rem-calc(25)
+
+  +breakpoint(medium)
+    padding-top: 0
+    margin-bottom: rem-calc(20)
+
+section#contact-form-map
+  padding-top: 0
+  padding-bottom: 0
+  margin-bottom: rem-calc(30)
+
+  iframe
+    margin-top: rem-calc(25)
+    width: auto
+    margin-bottom: rem-calc(25)
+
+  h3
+    margin-top: rem-calc(10)
+    margin-bottom: rem-calc(9)
+
+  .contact-deets
+    display: none!important
+
+  +breakpoint (medium)
+    margin-top: rem-calc(10)
+    margin-bottom: rem-calc(80)
+
+    p
+      padding: 0
+      margin-bottom: 0
+
+    iframe
+      margin-top: rem-calc(50)
+      width: 100%
+
+    locations
+      font-size: rem-calc(20)

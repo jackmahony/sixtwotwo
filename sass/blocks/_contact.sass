@@ -1,0 +1,37 @@
+// Contact 7 Form
+.wpcf7
+
+  .ajax-loader
+    display: none
+
+  .wpcf7-not-valid-tip
+    display: none
+
+  .wpcf7-form-control-wrap:last-of-type
+    .wpcf7-not-valid-tip
+      margin-bottom: rem-calc(20)
+
+  .wpcf7-not-valid
+    background-color: #F7AFAF
+    color: white
+
+    &:focus
+      color: $navy
+
+div.wpcf7-mail-sent-ok
+  position: absolute
+  bottom: 0
+  line-height: 1.1em
+  padding: 2rem 0 !important
+  border-width: 0 0 !important
+  margin: 0 0 !important
+  background-color: $primary-color
+  color: white
+  width: 100%
+  border: none
+  outline: none
+  margin: 0 auto
+  font-size: rem-calc(22)
+
+.wpcf7-validation-errors
+  display: none !important

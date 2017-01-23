@@ -1,0 +1,37 @@
+// Footer---------------------------------------------------------------------------------------
+#footer
+  background-color: #1C1C1C
+  position: relative
+  padding: rem-calc(20)
+  padding-bottom: rem-calc(20)
+
+  div
+    display: block
+    text-align: center
+
+  .footer-logo
+    display: none
+
+  img
+    display: inline-block
+    padding-left: rem-calc(10)
+
+  span
+    color: $white
+    display: block
+    padding-left: rem-calc(15)
+    line-height: 1.8rem
+    margin-bottom: .5rem
+
+  .social-icons
+    display: block
+
+  +breakpoint(medium)
+
+    .footer-logo
+      display: inline-block
+      width: rem-calc(100)
+      height: auto
+
+    span
+      display: inline-block
