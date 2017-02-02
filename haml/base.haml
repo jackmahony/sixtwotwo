@@ -35,7 +35,6 @@
   %body{class: "{{body_class}}", data-template: "base.twig"}
 
     {% include 'particles/navigation.twig' %}
-    {% include 'particles/navigation-mobile.twig' %}
     -# Page Content
     {% block content %}
       Sorry, no content
@@ -48,28 +47,32 @@
         %footer#footer
 
           .row{data-equalizer: "footer"}
-            .small-12.medium-8.columns{data-equalizer-watch: "footer"}
+            .small-12.medium-12.columns{data-equalizer-watch: "footer"}
 
               %a.nav-logo{href: "{{site.url}}"}
                 %img.footer-logo{src: "{{theme.link}}/assets/img/logo-sixtwotwo-white.svg"}
               {% if options.contact_number %}
-                %span Contact: {{options.contact_email}}
+                %span Contact: {{options.contact_number}}
               {% endif %}
               {% if options.contact_number %}
                 %span Email: {{options.contact_email}}
               {% endif %}
 
-            .small-12.medium-4.columns{data-equalizer-watch: "footer"}
-              .social-icons
+            -# .small-12.medium-4.columns{data-equalizer-watch: "footer"}
+            -#   .social-icons
+            -#
+            -#     %a.nav-logo{href: "https://www.facebook.com/"}
+            -#       %img{src: "{{theme.link}}/assets/img/facebook-logo-button.svg"}
+            -#     %a.nav-logo{href: "https://www.instagram.com/?hl=en"}
+            -#       %img{src: "{{theme.link}}/assets/img/instagram-logo.svg"}
+            -#     %a.nav-logo{href: "https://soundcloud.com/stream"}
+            -#       %img{src: "{{theme.link}}/assets/img/soundcloud-logo.svg"}
 
-                %a.nav-logo{href: "https://www.facebook.com/"}
-                  %img{src: "{{theme.link}}/assets/img/facebook-logo-button.svg"}
-                %a.nav-logo{href: "https://www.instagram.com/?hl=en"}
-                  %img{src: "{{theme.link}}/assets/img/instagram-logo.svg"}
-                %a.nav-logo{href: "https://soundcloud.com/stream"}
-                  %img{src: "{{theme.link}}/assets/img/soundcloud-logo.svg"}
+            {{ function('wp_footer') }}
       {% endif %}
     {% endblock %}
+
+
 
       -# Scripts
       %scripts
@@ -77,6 +80,8 @@
         %script{src: "{{theme.link}}/bower_components/foundation-sites/dist/js/foundation.min.js"}
         :javascript
           $(document).foundation();
+
+          jQuery('p:empty').remove();
 
       {% block scripts %}
 

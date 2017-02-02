@@ -1,136 +1,71 @@
 nav#topnav
   position: relative
-  z-index: 10
-  margin-bottom: rem-calc(10)
-  margin-top: 0
+  z-index: 1
+  margin-bottom: rem-calc(40)
+  margin-top: rem-calc(10)
   background-color: none
-
-  img
-    width: rem-calc(120)
-    height: auto
-
-  img.ham
-    width: rem-calc(40)
-    height: auto
-    margin-right: rem-calc(25)
 
   +breakpoint(medium)
     margin-top: rem-calc(40)
     margin-bottom: rem-calc(40)
-    padding-top: 0
-    padding-bottom: 0
-
-    img
-      display: block
-      margin-left: auto
-      margin-right: auto
-      width: 250px
-      height: auto
-
-    ul
-      display: block
-      padding-top: 0
-      margin-left: 50px
-
-    li
-      font-size: rem-calc(13)
-
-      a
-        font-size: rem-calc(16)
-        color: #1C1C1C
-        margin: rem-calc(13)
-        border: 2.2px solid
-        border-color: #1C1C1C
-        box-shadow: 0 20px 30px 0 rgba(0,0,0,0.1)
-        border-radius: 3px
-
-        &:after
-          content: ''
-          position: absolute
-          bottom: rem-calc(1)
-          opacity: 0
-          color: $white
-          left: 12.5%
-          transition: 200ms all
-
-        &:hover
-          opacity: 1
-          transition: 1s
-          background-color: #1C1C1C
-          color: $white
-
-          &:after
-            transition: 1.5s
-            bottom: -5
-            opacity: 1
-            color: $white
-
-    li.current_page_item a
-      color: $white
-      background-color: #1C1C1C
-
-// Mobile Styles
-#hamburger
-  // overflow: hidden
-  position: relative
-  display: inline-block
 
   img
-    width: rem-calc(10)
-    height: rem-calc(10)
+    width: 80%
+    height: auto
+    display: block
+    margin-left: auto
+    margin-right: auto
+    margin-bottom: 1rem
+    margin-top: 1rem
 
-#mobile-menu
-  background-color: $black
-  display: block
-  padding-top: 1rem
-  overflow-y: scroll
-  height: 100vh
-  width: 100vw
-  position: fixed
-  z-index: 999
-  animation-duration: 300ms
-
-  &.fadeOut
-    visibility: hidden
-    +transition(1000ms)
+    +breakpoint(medium)
+      width: rem-calc(250)
+      height: auto
+      margin-bottom: 0
 
   .menu
-    position: relative
-    top: 0
+    display: block
+    text-align: -webkit-center
 
-    li
-      border-bottom: 1px solid $white
+    +breakpoint(medium)
+      margin-left: 10rem
+      display: block
 
-      &:last-of-type
-        border-bottom-width: 0px
+    a
+      margin-left: 0.25rem
+      margin-right: 0.25rem
+      padding: 0.6rem
+      font-size: 1rem
+      color: $black
+      box-shadow: 0 20px 30px 0 rgba(0,0,0,.1)
+      border-radius: 3px
+      border: 2.2px solid
 
-      a
-        color: $white
-        text-transform: uppercase
-        text-align: center
-        padding: 1.5rem 0
-        font-size: rem-calc(22)
+      +breakpoint(medium)
+        padding-top: 0.7rem
+        padding-right: 1rem
+        padding-bottom: 0.7rem
+        padding-left: 1rem
+        margin: 0.8125rem
 
-  .accordian
-    li
-      border: none
-      border-top: 1px solid rgba(255,255,255,0.4)
+        &:hover
+          padding-top: 0.7rem
+          padding-right: 1rem
+          padding-bottom: 0.7rem
+          padding-left: 1rem
+          background-color: $black
+          color: $white
+          transition: 1.5s
+          box-shadow: 0 20px 30px 0 rgba(0,0,0,.1)
+          border-radius: 3px
+          border: 2.2px solid $black
 
-      a
-        font-size: rem-calc(20)
-        line-height: 1.2em
-
-  #mobile-container
-    position: relative
-    height: 100%
-
-  #mobile-main
-    +middle
-    padding: 0 2rem
-
-  .close-menu
-    position: absolute
-    right: 1rem
-    z-index: 99
-    display: inline-block
-    margin-top: rem-calc(6)
+  li.current_page_item a
+    background-color: $black
+    color: $white
+    padding-top: 0.7rem
+    padding-right: 1rem
+    padding-bottom: 0.7rem
+    box-shadow: 0 20px 30px 0 rgba(0,0,0,.1)
+    border-radius: 3px
+    border: 2.2px solid $black

@@ -1,0 +1,41 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+-# Project Page -------------------------------------------------------------------------------------------
+{% if post.show_projects %}
+  %section#projectshome.fadeInUp.animated
+    .row
+      {% if post.page_title %}
+        %h2 {{post.page_title}}
+      {% endif %}
+
+    .row.medium-up-3{data-equalizer: "project"}
+
+      {% for project in projects %}
+
+        .column.singleproject{data-equalizer-watch: "project"}
+          %a.project{href: "{{project.link}}"}
+            .project-pic
+              {% if project.project_image %}
+                %img{src: "{{TimberImage(project.project_image)|resize(300, 200) }}"}
+              {% endif %}
+            %figcaption
+              .project-info
+                {% if project.company_name %}
+                  %h3 {{project.company_name}}
+                    %hr
+                {% endif %}
+                {% if project.project_title %}
+                  %p {{project.project_title}}
+                {% endif %}
+      {% endfor %}
+
+    .row
+      .medium-12.columns.line
+
+{% endif %}
+
+
+
+{% endblock %}

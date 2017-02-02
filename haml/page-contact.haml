@@ -1,0 +1,40 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+-# Contact Page---------------------------------------------------------------------------------------------------
+{% if post.slug == 'contact' %}
+  %section#contact-text.slideInUp.animated
+    .row
+      .medium-12.columns
+        {% if post.contact_text %}
+          %p {{post.contact_text}}
+        {% endif %}
+
+  %section#contact-form-map.slideInUp.animated
+    .row{data-equalizer: "location", data-equalize-on: "medium"}
+      .medium-7.columns{data-equalizer-watch: "location"}
+        %h3 Send us an email
+        {% filter shortcodes %}
+          [contact-form-7 id="205" title="Contact Us"]
+        {% endfilter %}
+      .medium-4.medium-offset-1.columns{data-equalizer-watch: "location"}
+
+        <iframe width="370" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.211967103466!2d151.20048591521052!3d-33.88419438065198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae26e8e082af%3A0x40ef80faa7aeeab9!2s822+George+St%2C+Chippendale+NSW+2008!5e0!3m2!1sen!2sau!4v1481512433846&key=AIzaSyD45ubf_BlbU-828R6GD5QSlYcn0i5OjsU" allowfullscreen></iframe>
+        %locations
+          %h3 Contact Us
+          {% for location in options.business_location %}
+              %strong {{location.location}}
+              {{location.location_address.address}}
+          {% endfor %}
+            .contact-deets
+              {% if options.contact_number %}
+                %p Contact: {{options.contact_email}}
+              {% endif %}
+              {% if options.contact_number %}
+                %p Email: {{options.contact_email}}
+              {% endif %}
+{% endif %}
+
+
+{% endblock %}

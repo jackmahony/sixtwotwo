@@ -3,29 +3,37 @@
 {% block content %}
 
 
-  <video poster="http://sixtwotwoproductions.com/wp-content/themes/sixtwotwo-theme/assets/img/sample.jpg" id="bgvid" playsinline autoplay muted loop>
+  <video poster="http://sixtwotwoproductions.com/wp-content/themes/sixtwotwo-theme/assets/img/greyslide.jpg" id="bgvid" playsinline autoplay muted loop>
   <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
     <source src="http://sixtwotwoproductions.com/wp-content/themes/sixtwotwo-theme/assets/vid/asample.webm" type="video/webm">
     <source src="http://sixtwotwoproductions.com/wp-content/themes/sixtwotwo-theme/assets/vid/bsample.mp4" type="video/mp4">
   </video>
 
-  %section#enter-site.fadeInDown.animated
-    .row
-      %section#home-video
+  %section#enter-site
+    .row.small-middle
+      %section#home-video.fadeInDown.animated
           %a{href: "{{site.url}}"}
             %img{src: "{{theme.link}}/assets/img/logo-sixtwotwo-white.svg"}
-    .row
-      %section#home-enter
-        %a{href: "http://sixtwotwoproductions.com/about/"}
-          %p Enter Site
 
+      %section#home-enter.fadeInUp.animated
+        %a{href: "about"}
+          .button Enter Site
 
+  %section#homehack
+    {{post.content}}
 {% endblock %}
 
 {% block scripts %}
 
+  {% for item in post.get_field('service_icons') %}
 
+    :javascript
+      $(function() {
+        $("#hov-{{item.icon.id}}").hover(function(){
+          $("#norm-{{item.icon.id}}").toggleClass("hover");
+        });
+      });
 
-
+  {% endfor %}
 
 {% endblock %}

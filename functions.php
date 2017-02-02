@@ -12,6 +12,14 @@ if ( ! class_exists( 'Timber' ) ) {
 	return;
 }
 
+// Stop random p's
+function remove_the_wpautop_function() {
+    remove_filter( 'the_content', 'wpautop' );
+    remove_filter( 'the_excerpt', 'wpautop' );
+}
+
+add_action( 'after_setup_theme', 'remove_the_wpautop_function' );
+
 // Allow SVGs
 function cc_mime_types($mimes) {
   $mimes['svg'] = 'image/svg+xml';

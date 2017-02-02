@@ -57,7 +57,7 @@ gulp.task('watch', function() {
 	gulp.watch(paths.compiled).on('change', browserSync.reload);
 
   browserSync.init({
-      proxy: "http://localhost/sixtwotwo/"
+      proxy: "http://localhost:8888/sixtwotwo/"
   });
 });
 

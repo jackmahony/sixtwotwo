@@ -1,36 +1,35 @@
 {% extends "base.twig" %}
 
 {% block content %}
-
   -# Individual Projects------------------------------------------------------------------------------------------------------------------
-  %section#projects
-    .row
-      .medium-12.columns
-        {% if post.project_title %}
-          %h2 {{post.project_title}}
-        {% endif %}
+  %section#projects.slideInUp.animated
+    .media
+      .row
+        .medium-10.medium-centered.columns
+          {% if post.content %}
+            {{post.content}}
+          {% endif %}
 
-    .row
-      .medium-12.columns
-        {% if post.project_information %}
-          %p.info {{post.project_information}}
-        {% endif %}
+    .textblocks
+      .row
+        .medium-6.medium-centered.columns
+          {% if post.project_title %}
+            %h2 {{post.project_title}}
+          {% endif %}
 
-    .row.flexicontent
-      .medium-12.columns
-          {% for section in post.get_field('project_content') %}
-            {% if section.acf_fc_layout == 'sub_header' %}
-              .project-sub-header
+      .row
+        .medium-8.medium-centered.columns
+            {% for section in post.get_field('project_content') %}
+              {% if section.acf_fc_layout == 'sub_header' %}
                 %h3 {{section.sub_header}}
-            {% elseif section.acf_fc_layout == 'body_text' %}
-              .project-body-text
+              {% elseif section.acf_fc_layout == 'body_text' %}
                 %p {{section.body_text}}
-            {% elseif section.acf_fc_layout == 'percent_image' %}
-              .project-percent-image
-                %img{src: "{{ TimberImage(section.percent_image)|resize(300, 300) }}"}
-            {% elseif section.acf_fc_layout == 'full_image' %}
-              .medium-8.medium-offset-2.project-full-image
-                %img{src: "{{ TimberImage(section.full_image)}}"}
-            {% endif %}
-          {% endfor %}
+
+    .vidsound
+      .row
+        .medium-10.medium-centered.columns
+              {% elseif section.acf_fc_layout == 'vid_sound' %}
+                {{section.vid_sound}}
+              {% endif %}
+            {% endfor %}
 {% endblock %}

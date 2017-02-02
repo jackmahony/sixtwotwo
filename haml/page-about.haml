@@ -1,0 +1,69 @@
+{% extends "base.twig" %}
+
+{% block content %}
+-# # About SixTwoTwo----------------------------------------------------------------------------------------------------------------
+{% if post.studio_image %}
+  %section#home-img.slideInUp.animated{style: "background: url('{{ TimberImage(post.studio_image)}}')center;"}
+      .medium-middle
+        .row{data-equalizer: "text"}
+          .medium-8.medium-centered.columns{data-equalizer-watch: "text"}
+            {% if post.about_text %}
+              %h1.fadeInUpBig.animated {{post.about_text}}
+            {% endif %}
+          .medium-6.medium-centered.columns
+            {% if post.mission %}
+              %p.fadeInUpBig.animated {{post.mission}}
+            {% endif %}
+{% endif %}
+
+-# services list -------------------------------------------------------------------------------------------------------------------------
+{% if post.service_icons %}
+  %section#services.slideInUp.animated
+    .row.expanded{data-equalizer: "icons"}
+      .medium-up-3{data-equalizer-watch: "icons"}
+
+        {% for item in post.get_field('service_icons') %}
+          .column
+            .hov{id:"hov-{{item.icon.id}}", style: "background: url('{{ TimberImage(item.icon) }}')center no-repeat;"}
+              .small-middle
+                %img{src:"{{TimberImage(item.svg_icon)|resize(60, 60) }}"}
+            .norm{id:"norm-{{item.icon.id}}"}
+              %h3 {{item.title}}
+              %p {{item.description}}
+        {% endfor %}
+{% endif %}
+
+-# About Us section --------------------------------------------------------------------------------------------------------------------
+{% if post.image_tim %}
+  %section#us
+    .row{data-equalizer: "tim", data-equalize-on: "medium"}
+      .medium-6.columns{data-equalizer-watch: "tim"}
+        .tim
+          {% if post.image_tim %}
+            %img{src: "{{TimberImage(post.image_tim).src}}"}
+          {% endif %}
+
+      .medium-6.columns{data-equalizer-watch: "tim"}
+        .medium-middle
+          %h2 Tim
+          {% if post.tim_description %}
+            %p {{post.tim_description}}
+          {% endif %}
+
+    .row{data-equalizer: "luwi", data-equalize-on: "medium"}
+      .medium-6.medium-push-6.columns{data-equalizer-watch: "luwi"}
+        .lui
+          {% if post.image_lewi %}
+            %img{src: "{{TimberImage(post.image_lewi).src}}"}
+          {% endif %}
+
+      .medium-6.medium-pull-6.columns.collapse{data-equalizer-watch: "luwi"}
+        .medium-middle
+          %h2 Lewis
+          {% if post.lewi_description %}
+            %p {{post.lewi_description}}
+          {% endif %}
+
+{% endif %}
+
+{% endblock %}
