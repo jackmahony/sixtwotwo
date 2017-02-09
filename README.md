@@ -1,6 +1,6 @@
 # Sixtwotwo Procutions Theme #
 
-Assets have been ignored due to large video file sizez - These are stored on live servers with permalinks in order to ease synchronization
+Assets have been ignored due to large video file sizes - These are stored on live servers with permalinks in order to ease synchronization.
 
 Create Wordpress templates with Timber, HAML & SASS. Throw in some gulp for good measure and build with less err0rs and more speediness.
 
