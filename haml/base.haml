@@ -58,6 +58,12 @@
                 %span Email: {{options.contact_email}}
               {% endif %}
 
+              .author
+                %a{href:"http://www.jack-mahony.com/"}
+                  %span | Created by Jack Mahony
+
+
+
             -# .small-12.medium-4.columns{data-equalizer-watch: "footer"}
             -#   .social-icons
             -#
@@ -82,6 +88,11 @@
           $(document).foundation();
 
           jQuery('p:empty').remove();
+
+        -# Wowjs
+        %script{src: "{{theme.link}}/bower_components/wow/dist/wow.min.js"}
+        :javascript
+          new WOW().init();
 
       {% block scripts %}
 

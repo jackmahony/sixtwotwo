@@ -36,33 +36,32 @@
 -# About Us section --------------------------------------------------------------------------------------------------------------------
 {% if post.image_tim %}
   %section#us
-    .row{data-equalizer: "tim", data-equalize-on: "medium"}
-      .medium-6.columns{data-equalizer-watch: "tim"}
-        .tim
+    .tim.wow.slideInLeft
+      .row{data-equalizer: "tim", data-equalize-on: "medium"}
+        .medium-6.columns{data-equalizer-watch: "tim"}
           {% if post.image_tim %}
             %img{src: "{{TimberImage(post.image_tim).src}}"}
           {% endif %}
 
-      .medium-6.columns{data-equalizer-watch: "tim"}
-        .medium-middle
-          %h2 Tim
-          {% if post.tim_description %}
-            %p {{post.tim_description}}
-          {% endif %}
-
-    .row{data-equalizer: "luwi", data-equalize-on: "medium"}
-      .medium-6.medium-push-6.columns{data-equalizer-watch: "luwi"}
-        .lui
+        .medium-6.columns{data-equalizer-watch: "tim"}
+          .medium-middle
+            %h2 Tim
+            {% if post.tim_description %}
+              %p {{post.tim_description}}
+            {% endif %}
+    .lui.wow.slideInRight
+      .row{data-equalizer: "luwi", data-equalize-on: "medium"}
+        .medium-6.medium-push-6.columns{data-equalizer-watch: "luwi"}
           {% if post.image_lewi %}
             %img{src: "{{TimberImage(post.image_lewi).src}}"}
           {% endif %}
 
-      .medium-6.medium-pull-6.columns.collapse{data-equalizer-watch: "luwi"}
-        .medium-middle
-          %h2 Lewis
-          {% if post.lewi_description %}
-            %p {{post.lewi_description}}
-          {% endif %}
+        .medium-6.medium-pull-6.columns.collapse{data-equalizer-watch: "luwi"}
+          .medium-middle
+            %h2 Lewis
+            {% if post.lewi_description %}
+              %p {{post.lewi_description}}
+            {% endif %}
 
 {% endif %}
 
