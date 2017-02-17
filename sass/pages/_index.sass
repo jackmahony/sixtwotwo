@@ -1,12 +1,17 @@
 .vimeography-thumbnails
   display: none
 
+
 .vid-row
-  background-color: #90A1A3
+  +breakpoint(medium)
+    background-color: #90A1A3
 
 .vimeography-bugsauce
-  margin-top: 0 !important
+  margin-top: 2rem !important
   margin-bottom: 0 !important
+
+  +breakpoint(medium)
+    margin-top: 0 !important
 
 body
   background-color: none
@@ -104,7 +109,7 @@ section#home-img
   position: relative
   padding-top: rem-calc(10)
   padding-bottom: rem-calc(10)
-  
+
   +breakpoint(medium)
     padding-top: rem-calc(48)
     padding-bottom: rem-calc(48)
@@ -227,15 +232,20 @@ section#projectshome
   position: relative
   display: block
   animation-delay: 0.4s
-  background-color: #f4f4f4
+  background-color: #90a1a3
+
+  .singleproject
+    animation-delay: 1s
 
   +breakpoint(medium)
-    padding-bottom: rem-calc(60)
-    padding-top: 3rem
+    padding-bottom: rem-calc(80)
+    padding-top: rem-calc(80)
 
   h2
-    color: $black
+    color: $white
     text-align: center
+    animation-delay: 1s
+    border-color: $white
 
     +breakpoint(medium)
       margin-bottom: rem-calc(35)
@@ -245,6 +255,7 @@ section#projectshome
 
   p
     color: $white
+    margin-bottom: 0
 
   a
     overflow: hidden
@@ -290,6 +301,7 @@ section#projectshome
         &:hover
           opacity: 1
 
+
     .project-info
       position: absolute
       width: 100%
@@ -303,7 +315,7 @@ section#projectshome
       -webkit-transform: translate3d(0, 0, 0) scale(1.05)
       transform: translate3d(0, 0, 0) scale(1.05)
   .line
-    border-bottom: 1px solid #90A1A3
+    border-bottom: 1px solid $white
     padding-top: 1.5rem
 
 // Projects Individual-------------------------------------------------------------------
