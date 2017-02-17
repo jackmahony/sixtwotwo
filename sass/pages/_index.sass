@@ -1,3 +1,13 @@
+.vimeography-thumbnails
+  display: none
+
+.vid-row
+  background-color: #90A1A3
+
+.vimeography-bugsauce
+  margin-top: 0 !important
+  margin-bottom: 0 !important
+
 body
   background-color: none
 
@@ -59,17 +69,10 @@ section#home-enter
     padding-top: 10px
     padding-bottom: 10px
 
-    &:after
-      content: ''
-      position: absolute
-      bottom: rem-calc(1)
-      opacity: 0
-      color: #white
-      transition: 2s ease all
 
     &:hover
       opacity: 1
-      transition: 2s ease all
+      transition: 1s ease all
       background-color: $white
       border: $white
       color: #1C1C1C
@@ -79,9 +82,12 @@ section#home-enter
       padding-bottom: 10px
 
       &:after
-        transition: 2s ease all
-        opacity: 1
-        color: $white
+        content: ''
+        position: absolute
+        bottom: rem-calc(1)
+        opacity: 0
+        transition: 1s ease all
+
 
 section#homehack
   opacity: 0
@@ -98,11 +104,11 @@ section#home-img
   position: relative
   padding-top: rem-calc(10)
   padding-bottom: rem-calc(10)
-
+  
   +breakpoint(medium)
     padding-top: rem-calc(48)
     padding-bottom: rem-calc(48)
-    background-image: cover
+    background-image: cover !important
 
   h1
     font-size: rem-calc(26)
@@ -308,13 +314,6 @@ section#projects
   text-align: left
   animation-delay: 1000ms
 
-  .vimeography-bugsauce
-    margin-top: 0
-    margin-bottom: 0
-
-  .vimeography-thumbnails
-    display: none
-
   .project-body-text
     margin-bottom: 4rem
 
@@ -325,7 +324,7 @@ section#projects
 
   .media
     background-color: none
-    padding-top: 1.5rem
+    padding-top: 0
 
     +breakpoint(medium)
       background-color: #90A1A3

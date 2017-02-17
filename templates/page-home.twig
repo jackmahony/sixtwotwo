@@ -1,17 +1,11 @@
 {% extends "base.twig" %}{% block content %}  <video poster="http://sixtwotwoproductions.com/wp-content/themes/sixtwotwo-theme/assets/img/greyslide.jpg" id="bgvid" playsinline autoplay muted loop>  <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->    <source src="http://sixtwotwoproductions.com/wp-content/themes/sixtwotwo-theme/assets/vid/asample.webm" type="video/webm">    <source src="http://sixtwotwoproductions.com/wp-content/themes/sixtwotwo-theme/assets/vid/bsample.mp4" type="video/mp4">  </video><section id="enter-site"><div class="row small-middle"><section class="fadeInDown animated" id="home-video"><a href="{{site.url}}"><img src="{{theme.link}}/assets/img/logo-sixtwotwo-white.svg" /></a></section><section class="fadeInUp animated" id="home-enter"><a href="about"><div class="button">Enter Site</div></a></section></div></section><section id="homehack">{{post.content}}</section>{% endblock %}{% block scripts %}  {% for item in post.get_field('service_icons') %}
 <script type="text/javascript">
 //<![CDATA[
-
 $(function() {
-
   $("#hov-{{item.icon.id}}").hover(function(){
-
     $("#norm-{{item.icon.id}}").toggleClass("hover");
-
   });
-
 });
-
 
 //]]>
 </script>

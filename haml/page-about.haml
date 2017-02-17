@@ -4,16 +4,16 @@
 -# # About SixTwoTwo----------------------------------------------------------------------------------------------------------------
 {% if post.studio_image %}
   %section#home-img.slideInUp.animated{style: "background: url('{{ TimberImage(post.studio_image)}}')center;"}
-      .medium-middle
-        .row{data-equalizer: "text"}
-          .medium-8.medium-centered.columns{data-equalizer-watch: "text"}
-            {% if post.about_text %}
-              %h1.fadeInUpBig.animated {{post.about_text}}
-            {% endif %}
-          .medium-6.medium-centered.columns
-            {% if post.mission %}
-              %p.fadeInUpBig.animated {{post.mission}}
-            {% endif %}
+    .medium-middle
+      .row{data-equalizer: "text"}
+        .medium-8.medium-centered.columns{data-equalizer-watch: "text"}
+          {% if post.about_text %}
+            %h1.fadeInUpBig.animated {{post.about_text}}
+          {% endif %}
+        .medium-6.medium-centered.columns
+          {% if post.mission %}
+            %p.fadeInUpBig.animated {{post.mission}}
+          {% endif %}
 {% endif %}
 
 -# services list -------------------------------------------------------------------------------------------------------------------------

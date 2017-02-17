@@ -55,7 +55,8 @@
                 %span Contact: {{options.contact_number}}
               {% endif %}
               {% if options.contact_number %}
-                %span Email: {{options.contact_email}}
+                %a{href:"mailto:sixtwotwoproductions@gmail.com"}
+                  %span Email: {{options.contact_email}}
               {% endif %}
 
               .author

@@ -2,14 +2,17 @@
 
 {% block content %}
   -# Individual Projects------------------------------------------------------------------------------------------------------------------
-  %section#projects.slideInUp.animated
-    .media
-      .row
-        .medium-10.medium-centered.columns
-          {% if post.content %}
-            {{post.content}}
-          {% endif %}
 
+    -# .media
+    -#   .row
+    -#     .medium-10.medium-centered.columns
+  .row.expanded.vid-row
+    .medium-8.medium-centered.columns
+
+      {% if post.content %}
+        {{post.content}}
+      {% endif %}
+  %section#projects.slideInUp.animated
     .textblocks
       .row
         .medium-6.medium-centered.columns

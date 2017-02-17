@@ -12,16 +12,17 @@
   .footer-logo
     display: none
 
-  img
-    display: inline-block
-    padding-left: rem-calc(10)
+    +breakpoint(medium)
+      padding-left: rem-calc(10)
 
   span
     color: $white
-    display: block
-    padding-left: rem-calc(15)
+    display: block    
     line-height: 1.8rem
     margin-bottom: .5rem
+
+    +breakpoint(medium)
+      padding-left: rem-calc(15)
 
   .social-icons
     display: block
